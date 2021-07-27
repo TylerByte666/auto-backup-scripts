@@ -23,7 +23,7 @@ BACKUP_RETAIN_DAYS=Days you want to keep backups, default 120 days.
 LOGFILE_NAME=The name you want your log to be called default html_backup_log
 ```
 
-auto_backup_html.sh
+auto_backup_mysql.sh
 ```bash
 DB_BACKUP_PATH='/folder/to/backup/to'
 MYSQL_USER='Your MySql user'
