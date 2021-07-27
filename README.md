@@ -1,5 +1,5 @@
 # Scripts for backing up webserver databases and files.
-## Scope and Purpose
+## Scope and Purpose:
 These scripts are meant for fullstacks, webdevs or sysadmins who use linux based webservers; who need daily backups of both MySql, RAW and HTML files. These scripts have been divided in two, one for MySql and the other for RAW & HTML files so you can choose which one you need :smiling_face_with_three_hearts:
 
 These scripts do three things:
@@ -7,7 +7,7 @@ These scripts do three things:
 2. Remove daily backups after the retention period that you have set passes.
 3. Compress both RAW, HTML and MySql files using tar.
 
-## Basic Instructions
+## Basic Instructions:
 1. Clone this repo on your web server.
 2. Run *chmod +x* on each script to make them executable.
 3. Add the desired script to your cronjobs at your desired time of day.
