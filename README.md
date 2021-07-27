@@ -1,4 +1,4 @@
-# Scripts for backing up webserver databases and files.
+# Scripts for backing up webserver databases and files daily.
 ## Scope and Purpose:
 These scripts are meant for fullstacks, webdevs or sysadmins who use linux based webservers; who need daily backups of both MySql, RAW and HTML files. These scripts have been divided in two, one for MySql and the other for RAW & HTML files so you can choose which one you need :smiling_face_with_three_hearts:
 
