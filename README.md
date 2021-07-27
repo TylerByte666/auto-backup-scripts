@@ -9,7 +9,7 @@ These scripts do three things:
 
 ## Basic Instructions:
 1. Clone this repo on your web server.
-2. Run *chmod +x* on each script to make them executable.
+2. Run `sudo chmod +x` on each script to make them executable.
 3. Add the desired script to your cronjobs at your desired time of day.
 4. Edit the scripts to reflect your environment. See configs you must change below:
 
