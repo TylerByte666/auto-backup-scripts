@@ -1,8 +1,8 @@
-# Scripts for backing up webserver databases and html.
+# Scripts for backing up webserver databases and files.
 ## Scope and Purpose
-These scripts are meant for fullstacks, webdevs or sysadmins who use linux based webservers; who need daily backups of both MySql and HTML files. These scripts have been divided in two, one for MySql and the other for RAW & HTML files so you can choose which one you need :)
+These scripts are meant for fullstacks, webdevs or sysadmins who use linux based webservers; who need daily backups of both MySql, RAW and HTML files. These scripts have been divided in two, one for MySql and the other for RAW & HTML files so you can choose which one you need :)
 
-These scipts do three things:
+These scripts do three things:
 1. Make daily backups of RAW, HTML (auto_backup_html.sh) and mysql(auto_backup_mysql.sh) files.
 2. Remove daily backups after the retention period that you have set passes.
 3. Compress both RAW, HTML and MySql files using tar.
@@ -25,6 +25,7 @@ LOGFILE_NAME=The name you want your log to be called default html_backup_log
 
 auto_backup_html.sh
 ```bash
+DB_BACKUP_PATH='/folder/to/backup/to'
 MYSQL_USER='Your MySql user'
 MYSQL_PASSWORD='Your MySql password'
 DATABASE_NAME='Db you want to backup'
