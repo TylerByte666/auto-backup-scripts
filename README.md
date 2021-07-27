@@ -5,7 +5,7 @@ These scripts are meant for fullstacks, webdevs or sysadmins who use linux based
 These scripts do three things:
 1. Make daily backups of RAW, HTML (auto_backup_html.sh) and mysql(auto_backup_mysql.sh) files.
 2. Remove daily backups after the retention period that you have set passes.
-3. Compress both RAW, HTML and MySql files using tar.
+3. Both compress RAW, HTML and MySql files using tar.
 
 ## Basic Instructions:
 1. Clone this repo on your web server.
