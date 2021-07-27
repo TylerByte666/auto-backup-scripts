@@ -15,7 +15,8 @@ MYSQL_USER=''
 MYSQL_PASSWORD=''
 DATABASE_NAME=''
 BACKUP_RETAIN_DAYS=120   ## Number of days to keep local backup copy
-LOGFILE="${DB_BACKUP_PATH}/log/"db_backup_log_"$(date +'%Y_%m')".txt 
+LOGFILE_NAME='db_backup_log'
+LOGFILE="${DB_BACKUP_PATH}/log/${LOGFILE_NAME}_$(date +'%Y_%m')".log 
 #################################################################
  
 mkdir -p ${DB_BACKUP_PATH}/${TODAY} 

@@ -1,7 +1,7 @@
 #!/bin/bash 
 ################################################################
 ##
-##   Web File Backup Script 
+##   HTML File Backup Script 
 ##   Written By: Tyler Geyser
 ##
 ################################################################ 
@@ -10,9 +10,10 @@ TODAY=`date +"%d%b%Y"`
 ################## Update below values  ######################## 
 HTML_BACKUP_PATH='/var/backups'
 HTML_BACKUP_SRC='/var/www/html'
-APP_NAME=''
+APP_NAME='myApp'
 BACKUP_RETAIN_DAYS=120   ## Number of days to keep local backup copy
-LOGFILE="${HTML_BACKUP_PATH}/log/"html_backup_log_"$(date +'%Y_%m')".txt 
+LOGFILE_NAME = 'html_backup_log'
+LOGFILE="${HTML_BACKUP_PATH}/log/${LOGFILE_NAME}_$(date +'%Y_%m')".log
 #################################################################
 
 mkdir -p ${HTML_BACKUP_PATH}/${TODAY}
