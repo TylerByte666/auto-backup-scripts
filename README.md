@@ -18,7 +18,7 @@ auto_backup_html.sh
 ```bash
 HTML_BACKUP_PATH='/folder/to/backup/to'
 HTML_BACKUP_SRC='/folder/to/backup'
-APP_NAME='The specific applciation you are backing up'
+APP_NAME='The specific application you are backing up'
 BACKUP_RETAIN_DAYS=Days you want to keep backups, default 120 days.
 LOGFILE_NAME=The name you want your log to be called default html_backup_log
 ```
