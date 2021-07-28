@@ -12,7 +12,6 @@ DB_BACKUP_PATH='/var/backups'
 MYSQL_HOST='localhost'
 MYSQL_PORT='3306'
 MYSQL_USER=''
-MYSQL_PASSWORD=''
 DATABASE_NAME=''
 BACKUP_RETAIN_DAYS=120   ## Number of days to keep local backup copy
 LOGFILE_NAME='db_backup_log'
@@ -27,7 +26,6 @@ echo "Backup retention: ${BACKUP_RETAIN_DAYS} days" >> "$LOGFILE"
 mysqldump -h ${MYSQL_HOST} \
    -P ${MYSQL_PORT} \
    -u ${MYSQL_USER} \
-   -p${MYSQL_PASSWORD} \
    ${DATABASE_NAME} | gzip > ${DB_BACKUP_PATH}/${TODAY}/${DATABASE_NAME}-${TODAY}.sql.gz
  
 if [ $? -eq 0 ]; then
