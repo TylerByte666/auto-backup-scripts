@@ -33,7 +33,6 @@ auto_backup_mysql.sh
 ```bash
 DB_BACKUP_PATH='/folder/to/backup/to'
 MYSQL_USER='Your MySql user'
-MYSQL_PASSWORD='Your MySql password'
 DATABASE_NAME='Db you want to backup'
 BACKUP_RETAIN_DAYS=Days you want to keep backups, default 120 days.
 LOGFILE_NAME=The name you want your log to be called default db_backup_log
