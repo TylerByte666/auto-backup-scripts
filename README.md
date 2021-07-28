@@ -16,9 +16,12 @@ These scripts do three things:
 1. Clone this repo on your web server.
 2. Make each script you want to use executable, by running these commands in the directory where you cloned the code:
 
-`sudo chmod +x auto_backup_html.sh`
-
-`sudo chmod +x auto_backup_mysql.sh`
+```
+sudo chmod +x auto_backup_html.sh
+```
+```
+sudo chmod +x auto_backup_mysql.sh
+```
 
 3. Edit the scripts to reflect your environment. See configs you must change below. 🔽
 
