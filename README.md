@@ -1,6 +1,6 @@
 # Scripts for backing up webserver databases and files daily.
 
-These scripts are meant for fullstacks, webdevs or sysadmins who use linux based webservers; who need daily backups of both MySql, RAW and HTML files. These scripts have been divided in two, one for MySql and the other for RAW & HTML files so you can choose which one you need :smiling_face_with_three_hearts:
+These scripts are meant for fullstacks, webdevs or sysadmins who use linux based webservers; who need daily backups of both MySql, RAW and HTML files. These scripts have been divided in two, one for MySql and the other for RAW & HTML files so you can choose which one you need :smiling_face_with_three_hearts:.
 
 ## Scope and Purpose:
 These scripts do three things:
@@ -17,7 +17,7 @@ These scripts do three things:
 `sudo chmod +x auto_backup_mysql.sh`
 
 3. Add the desired script to your cronjobs at your desired time of day.
-4. Edit the scripts to reflect your environment. See configs you must change below:
+4. Edit the scripts to reflect your environment. See configs you must change below.
 
 ## Configs you must change:
 auto_backup_html.sh
@@ -37,4 +37,20 @@ MYSQL_PASSWORD='Your MySql password'
 DATABASE_NAME='Db you want to backup'
 BACKUP_RETAIN_DAYS=Days you want to keep backups, default 120 days.
 LOGFILE_NAME=The name you want your log to be called default db_backup_log
+```
+5. Add the mysqldump password paramater to your `.my.cnf`. 
+The *my.cnf* file is hidden in your home directory, usually `/home/username/.my.cnf`. 
+
+**Please note:** This will allow passwordless mysqldump commands.
+```config
+sudo nano ~/.my.cnf
+```
+Edit and Enter in the following two lines replacing *YOUR_PASSWORD_HERE* with your own and save the file.
+```config
+[mysqldump]
+password=YOUR_PASSWORD_HERE
+```
+Last, change the file permissions.
+```config
+sudo chmod 600 ~/.my.cnf
 ```
