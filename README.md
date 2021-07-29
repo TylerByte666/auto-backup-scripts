@@ -5,7 +5,7 @@ These scripts are meant for fullstacks, webdevs or sysadmins who use linux based
 These scripts have been divided in two, one for MySql and the other for Files and Folders so you can choose which one you need.
 
 **Please note**
-You will *root* access to use these scripts.
+You will need *root* access to use these scripts.
 
 :smiling_face_with_three_hearts:.
 
@@ -71,9 +71,12 @@ cp auto_backup_mysql.sh /etc/cronjob.daily/
 ```
 
 6. Create your backup folders for the MySql and/or the Folders/Files according to the config you have set, example:
+
+If your file auto_backup_files.sh config looks like this `HTML_BACKUP_PATH='/var/backups/html'`
 ```config
 mkdir /var/backups/html
 ```
+If your file auto_backup_mysql.sh config looks like this `DB_BACKUP_PATH='/var/backups/mysql'`
 ```config
 mkdir /var/backups/mysql
 ```
