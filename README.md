@@ -20,7 +20,7 @@ These scripts do three things:
 2. Make each script you want to use executable, by running these commands in the directory where you cloned the code:
 
 ```
-chmod +x auto_backup_html.sh
+chmod +x auto_backup_files.sh
 ```
 ```
 chmod +x auto_backup_mysql.sh
