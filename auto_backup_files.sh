@@ -12,8 +12,8 @@ HTML_BACKUP_PATH='/var/backups'
 HTML_BACKUP_SRC='/var/www/html'
 APP_NAME='myApp'
 BACKUP_RETAIN_DAYS=120   ## Number of days to keep local backup copy
-LOGFILE_NAME = 'html_backup_log'
-LOGFILE="${HTML_BACKUP_PATH}/log/${LOGFILE_NAME}_$(date +'%Y_%m')".log
+LOGFILE_NAME = 'html_backup'
+LOGFILE="${HTML_BACKUP_PATH}/log/${LOGFILE_NAME}".log
 #################################################################
 
 mkdir -p ${HTML_BACKUP_PATH}/${TODAY}
@@ -21,7 +21,7 @@ echo "Backup started for html files @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE
 echo "Backup retention: ${BACKUP_RETAIN_DAYS} days" >> "$LOGFILE"
 
 cd ${HTML_BACKUP_PATH}/${TODAY}
-tar -czf ${APP_NAME}-${TODAY}.tar.gz ${HTML_BACKUP_SRC}
+tar -cvzf ${APP_NAME}-${TODAY}.tar.gz ${HTML_BACKUP_SRC} >> "$LOGFILE"
 
 
 echo "HTML backup successfully completed @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
