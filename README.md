@@ -111,11 +111,11 @@ grep auto_backup /var/log/cron
 
 3. Make sure your cron service is running.
 
-- on Debian based systems, like Ubuntu:
+- on Debian-based systems, like Ubuntu:
 ```bash
 systemctl status cron
 ```
-- on Fedora based systems, like CentOS:
+- on RHEL-based systems, like CentOS:
 ```bash
 systemctl status crond
 ```
