@@ -88,8 +88,9 @@ mkdir /var/backups/mysql
 ```
 ## 🚀 You're done and ready for disaster! 🚀  
 
-<br>
 ---
+<br>
+
 # 🐛 Toubleshooting  
 ## The scripts do not run.
 
