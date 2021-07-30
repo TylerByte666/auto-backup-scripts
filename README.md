@@ -102,11 +102,11 @@ This should shout out any error.
 
 ## Where can I find logs to see if they ran or not.
 
-- on Debian based systems, like Ubuntu:
+- on Debian-based systems, like Ubuntu:
 ```bash
 grep auto_backup /var/log/syslog
 ```
-- on Fedora based systems, like CentOS:
+- on RHEL-based systems, like CentOS:
 ```bash
 grep auto_backup /var/log/cron
 ```
