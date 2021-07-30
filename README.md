@@ -1,19 +1,19 @@
 # 🚀 Scripts for automatically backing up MySql Databases and Folders/Files daily.
 
-These scripts are meant for fullstacks, webdevs or sysadmins who use linux based webservers; who need daily backups of MySql and Folders/Files. 
+These scripts are meant for Fullstacks, Webdevs or Sysadmins who use linux based webservers; who need daily backups of MySql databases, Folders and/or Files. 
 
-These scripts have been divided in two, one for MySql and the other for Files and Folders so you can choose which one you need.
+These scripts have been divided in two, one for MySql databases and the other for Files and Folders so you can choose which one you need.
 
 **Please note**
 You will need *root* access to use these scripts.
 
-:smiling_face_with_three_hearts:.
+:smiling_face_with_three_hearts:
 
 ## Scope and Purpose:
 These scripts do three things:
-1. Make daily backups of Folders/Files(auto_backup_files.sh) and MySql(auto_backup_mysql.sh) databases.
+1. Make daily backups of Folders/Files(auto_backup_files.sh) and MySql databases(auto_backup_mysql.sh).
 2. Remove backups after the retention period that you have set for them passes.
-3. Compress Folders/Files and MySql dump files.
+3. Compress Folders/Files and MySql database dump files.
 
 ## Basic Instructions:
 1. Clone this repo on your web server making sure you are *root*.
@@ -26,7 +26,7 @@ chmod +x auto_backup_files.sh
 chmod +x auto_backup_mysql.sh
 ```
 
-3. Edit the scripts to reflect your environment. See configs you must change below. 🔽
+3. Edit the scripts to reflect your web server environment. See configs you must change below. 🔽
 
 ## Configs you must change:
 auto_backup_files.sh
