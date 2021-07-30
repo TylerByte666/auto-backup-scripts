@@ -132,7 +132,7 @@ Then extract and output the backup
 ```bash
 tar -zxf backup.tar.gz -C /directory/to/restore/to
 ```
-## MySql restore
+## MySql database restore
 First, drop the db you are restoring:
 
 Log into mysql
