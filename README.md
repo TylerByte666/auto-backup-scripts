@@ -35,16 +35,14 @@ HTML_BACKUP_PATH='/folder/to/backup/to'
 HTML_BACKUP_SRC='/folder/to/backup'
 APP_NAME='The specific application you are backing up'
 BACKUP_RETAIN_DAYS=Days you want to keep backups, default 120 days.
-LOGFILE_NAME=The name you want your log to be called default html_backup.log.
 ```
 
 auto_backup_mysql.sh
 ```bash
 DB_BACKUP_PATH='/folder/to/backup/to'
 MYSQL_USER='Your MySql user'
-DATABASE_NAME='Db you want to backup'
+DATABASE_NAME='MySql db you want to backup'
 BACKUP_RETAIN_DAYS=Days you want to keep backups, default 120 days.
-LOGFILE_NAME=The name you want your log to be called default mysql_backup.log.
 ```
 4. Add the mysqldump password paramater to your `.my.cnf`. 
 The *my.cnf* file is hidden in your home directory, usually `/home/username/.my.cnf`. 🔽
@@ -88,9 +86,13 @@ then make that dir:
 ```config
 mkdir /var/backups/mysql
 ```
-# 🚀 You're done and ready for disaster! 🚀
-## Toubleshooting 🐛
-1. The scripts do not run.
+## 🚀 You're done and ready for disaster! 🚀  
+
+<br>
+<br>
+---
+# 🐛 Toubleshooting  
+## The scripts do not run.
 
 Make sure you can run the script manually, example:
 ```config
@@ -98,7 +100,7 @@ Make sure you can run the script manually, example:
 ```
 This should shout out any error.
 
-2. Where can I find logs to see if they ran or not.
+## Where can I find logs to see if they ran or not.
 
 - on Debian based systems, like Ubuntu:
 ```bash
@@ -109,7 +111,7 @@ grep auto_backup /var/log/syslog
 grep auto_backup /var/log/cron
 ```
 
-3. Make sure your cron service is running.
+## Make sure your cron service is running.
 
 - on Debian-based systems, like Ubuntu:
 ```bash
@@ -119,6 +121,45 @@ systemctl status cron
 ```bash
 systemctl status crond
 ```
+---
+# 🥳 DR Cheat Sheet 
+## Files/Folders restore
+For unzipping files, first clear the target directory:
+```bash
+rm -rf /directory/to/restore/to
+```
+Then extract and output the backup
+```bash
+tar -zxf backup.tar.gz -C /directory/to/restore/to
+```
+## MySql restore
+First, drop the db you are restoring:
 
-## DR - Distater Recovery 🥳
-WIP
+Log into mysql
+```bash
+mysql -u root -p
+```
+Now make sure you choose the right database:
+```mysql
+SHOW DATABASES;
+```
+**WARNING** Make sure you drop the right one!
+```mysql
+DROP DATABASE db-to-restore;
+```
+Now create it again:
+```bash
+CREATE DATABASE db-to-restore;
+```
+After that is successful, exit mysql and import the file:
+```mysql
+exit;
+```
+Then, extract the backup:
+```bash
+gzip -d < backup-dbname.sql.gz
+```
+Last import backed up db.
+```bash
+mysql -u root -p db-to-restore < backup-dbname.sql
+```

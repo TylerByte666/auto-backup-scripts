@@ -1,30 +1,29 @@
 #!/bin/bash 
 ################################################################
 ##
-##   HTML File Backup Script 
+##   File/Folder Backup Script 
 ##   Written By: Tyler Geyser
 ##
 ################################################################ 
 TODAY=`date +"%d%b%Y"`
 ################################################################
 ################## Update below values  ######################## 
-HTML_BACKUP_PATH='/var/backups'
-HTML_BACKUP_SRC='/var/www/html'
+FILE_BACKUP_PATH='/var/backups'
+FILE_BACKUP_SRC='/var/www/html'
 APP_NAME='myApp'
 BACKUP_RETAIN_DAYS=120   ## Number of days to keep local backup copy
-LOGFILE_NAME = 'html_backup'
-LOGFILE="${HTML_BACKUP_PATH}/log/${LOGFILE_NAME}".log
+LOGFILE="${FILE_BACKUP_PATH}/log/${APP_NAME}".log
 #################################################################
 
-mkdir -p ${HTML_BACKUP_PATH}/${TODAY}
+mkdir -p ${FILE_BACKUP_PATH}/${TODAY}
 echo "Backup started for html files @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
 echo "Backup retention: ${BACKUP_RETAIN_DAYS} days" >> "$LOGFILE"
 
-cd ${HTML_BACKUP_PATH}/${TODAY}
-tar -cvzf ${APP_NAME}-${TODAY}.tar.gz ${HTML_BACKUP_SRC} >> "$LOGFILE"
+cd ${FILE_BACKUP_PATH}/${TODAY}
+tar -cvzf ${APP_NAME}-${TODAY}.tar.gz ${FILE_BACKUP_SRC} >> "$LOGFILE" 2>&1
 
 
-echo "HTML backup successfully completed @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
+echo "FILE/FOLDER backup successfully completed @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
 echo "********************************************************************" >> "$LOGFILE"
 
 
@@ -32,8 +31,8 @@ echo "********************************************************************" >> "
  
 DBDELDATE=`date +"%d%b%Y" --date="${BACKUP_RETAIN_DAYS} days ago"`
  
-if [ ! -z ${HTML_BACKUP_PATH} ]; then
-      cd ${HTML_BACKUP_PATH}
+if [ ! -z ${FILE_BACKUP_PATH} ]; then
+      cd ${FILE_BACKUP_PATH}
       if [ ! -z ${DBDELDATE} ] && [ -d ${DBDELDATE} ]; then
             rm -rf ${DBDELDATE}
             echo "Deleted older backup: ${DBDELDATE} @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
