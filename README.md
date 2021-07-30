@@ -72,7 +72,7 @@ cp auto_backup_mysql.sh /etc/cronjob.daily/
 
 If your file auto_backup_files.sh config looks like this 
 
-`HTML_BACKUP_PATH='/var/backups/html'` 
+`FILE_BACKUP_PATH='/var/backups/html'` 
 
 then make that dir:
 ```config
@@ -88,7 +88,6 @@ mkdir /var/backups/mysql
 ```
 ## 🚀 You're done and ready for disaster! 🚀  
 
-<br>
 <br>
 ---
 # 🐛 Toubleshooting  
