@@ -148,7 +148,7 @@ SHOW DATABASES;
 DROP DATABASE db-to-restore;
 ```
 Now create it again:
-```bash
+```mysql
 CREATE DATABASE db-to-restore;
 ```
 After that is successful, exit mysql and import the file:
