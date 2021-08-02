@@ -26,7 +26,10 @@ mysqldump -h ${MYSQL_HOST} \
    -P ${MYSQL_PORT} \
    -u ${MYSQL_USER} \
    ${DATABASE_NAME} | gzip > ${DB_BACKUP_PATH}/${TODAY}/${DATABASE_NAME}-${TODAY}.sql.gz
- 
+
+FILE_SIZE=$(wc -c "${DB_BACKUP_PATH}/${TODAY}/${DATABASE_NAME}-${TODAY}.sql.gz" | awk '{print $1}')
+echo "Total Size: " $FILE_SIZE >> "$LOGFILE"
+
 if [ $? -eq 0 ]; then
   echo "Database backup successfully completed @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
   echo "********************************************************************" >> "$LOGFILE"
