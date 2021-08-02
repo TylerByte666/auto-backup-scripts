@@ -22,7 +22,8 @@ echo "Backup retention: ${BACKUP_RETAIN_DAYS} days" >> "$LOGFILE"
 
 cd ${FILE_BACKUP_PATH}/${TODAY}
 
-if ["$VERBOSE" =true]; then
+if $VERBOSE 
+then
       tar -cvzf ${APP_NAME}-${TODAY}.tar.gz ${FILE_BACKUP_SRC} >> "$LOGFILE" 2>&1
 else
       tar -czf ${APP_NAME}-${TODAY}.tar.gz ${FILE_BACKUP_SRC} >> "$LOGFILE" 2>&1
