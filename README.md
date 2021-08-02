@@ -35,7 +35,7 @@ FILE_BACKUP_PATH='/folder/to/backup/to'
 FILE_BACKUP_SRC='/folder/to/backup'
 APP_NAME='The specific application you are backing up'
 BACKUP_RETAIN_DAYS=Days you want to keep backups, default 120 days.
-VERBOSE= By default verbose archiving is true, to limit the size of your logs, turns this to false :smile:.
+VERBOSE= By default verbose archiving is true, to limit the size of your logs, turns this to false.
 ```
 
 auto_backup_mysql.sh
