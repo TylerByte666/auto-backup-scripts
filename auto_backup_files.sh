@@ -22,7 +22,7 @@ echo "Backup retention: ${BACKUP_RETAIN_DAYS} days" >> "$LOGFILE"
 cd ${FILE_BACKUP_PATH}/${TODAY}
 tar -czf ${APP_NAME}-${TODAY}.tar.gz ${FILE_BACKUP_SRC} >> "$LOGFILE" 2>&1
 
-if [ $? = 0 ]; then
+if [ $? -eq 0 ]; then
       FILE_SIZE=$(wc -c "${APP_NAME}-${TODAY}.tar.gz" | awk '{print $1}')
       echo "Total Size: " $FILE_SIZE >> "$LOGFILE"
       echo "FILE/FOLDER backup successfully completed @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
