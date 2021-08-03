@@ -19,14 +19,16 @@ LOGFILE="${DB_BACKUP_PATH}/log/${DATABASE_NAME}".log
  
 mkdir -p ${DB_BACKUP_PATH}/${TODAY} 
 echo "Backup started for database - ${DATABASE_NAME} @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
-echo "Backup retention: ${BACKUP_RETAIN_DAYS} days" >> "$LOGFILE"
- 
+echo "Backup retention: ${BACKUP_RETAIN_DAYS} days" >> "$LOGFILE" 
  
 mysqldump -h ${MYSQL_HOST} \
    -P ${MYSQL_PORT} \
    -u ${MYSQL_USER} \
    ${DATABASE_NAME} | gzip > ${DB_BACKUP_PATH}/${TODAY}/${DATABASE_NAME}-${TODAY}.sql.gz
- 
+
+FILE_SIZE=$(wc -c "${DB_BACKUP_PATH}/${TODAY}/${DATABASE_NAME}-${TODAY}.sql.gz" | awk '{print $1}')
+echo "Total Size: " $FILE_SIZE >> "$LOGFILE"
+
 if [ $? -eq 0 ]; then
   echo "Database backup successfully completed @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
   echo "********************************************************************" >> "$LOGFILE"
