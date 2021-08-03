@@ -34,5 +34,3 @@ jobs:
         run: |
             chmod +x auto_backup_mysql.sh
             chmod +x auto_backup_files.sh
-            ./auto_backup_mysql.sh
-            ./auto_backup_files.sh
