@@ -77,7 +77,7 @@ If your file auto_backup_files.sh config looks like this
 
 then make that dir:
 ```config
-mkdir /var/backups/html
+mkdir -p /var/backups/html
 ```
 If your file auto_backup_mysql.sh config looks like this 
 
@@ -85,7 +85,7 @@ If your file auto_backup_mysql.sh config looks like this
 
 then make that dir:
 ```config
-mkdir /var/backups/mysql
+mkdir -p /var/backups/mysql
 ```
 ## 🚀 You're done and ready for disaster! 🚀  
 
