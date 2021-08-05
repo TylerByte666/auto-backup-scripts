@@ -11,7 +11,7 @@ TODAY=`date +"%d%b%Y"`
 FILE_BACKUP_PATH='/var/backups'
 FILE_BACKUP_SRC='/var/www/html'
 APP_NAME='myApp'
-BACKUP_RETAIN_DAYS=120   ## Number of days to keep local backup copy
+BACKUP_RETAIN_DAYS=60   ## Number of days to keep local backup copy
 LOGFILE="${FILE_BACKUP_PATH}/log/${APP_NAME}".log
 VERBOSE=true
 #################################################################
