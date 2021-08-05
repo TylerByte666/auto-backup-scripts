@@ -34,7 +34,7 @@ auto_backup_files.sh
 FILE_BACKUP_PATH='/folder/to/backup/to'
 FILE_BACKUP_SRC='/folder/to/backup'
 APP_NAME='The specific application you are backing up'
-BACKUP_RETAIN_DAYS=Days you want to keep backups, default 120 days.
+BACKUP_RETAIN_DAYS=Days you want to keep backups, default 60 days.
 VERBOSE= By default verbose archiving is true, to limit the size of your logs, turn this to false.
 ```
 
@@ -43,7 +43,7 @@ auto_backup_mysql.sh
 DB_BACKUP_PATH='/folder/to/backup/to'
 MYSQL_USER='Your MySql user'
 DATABASE_NAME='MySql db you want to backup'
-BACKUP_RETAIN_DAYS=Days you want to keep backups, default 120 days.
+BACKUP_RETAIN_DAYS=Days you want to keep backups, default 60 days.
 ```
 4. Add the mysqldump password paramater to your `.my.cnf`. 
 The *my.cnf* file is hidden in your home directory, usually `/home/username/.my.cnf`. 🔽
@@ -77,7 +77,7 @@ If your file auto_backup_files.sh config looks like this
 
 then make that dir:
 ```config
-mkdir /var/backups/html
+mkdir -p /var/backups/html
 ```
 If your file auto_backup_mysql.sh config looks like this 
 
@@ -85,7 +85,7 @@ If your file auto_backup_mysql.sh config looks like this
 
 then make that dir:
 ```config
-mkdir /var/backups/mysql
+mkdir -p /var/backups/mysql
 ```
 ## 🚀 You're done and ready for disaster! 🚀  
 
