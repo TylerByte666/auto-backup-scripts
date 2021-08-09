@@ -68,25 +68,6 @@ cp auto_backup_files.sh /etc/cronjob.daily/
 ```config
 cp auto_backup_mysql.sh /etc/cronjob.daily/
 ```
-
-6. Create your backup folders for the MySql and/or the Folders/Files according to the config you have set, example:
-
-If your file auto_backup_files.sh config looks like this 
-
-`FILE_BACKUP_PATH='/var/backups/html'` 
-
-then make that dir:
-```config
-mkdir -p /var/backups/html
-```
-If your file auto_backup_mysql.sh config looks like this 
-
-`DB_BACKUP_PATH='/var/backups/mysql'` 
-
-then make that dir:
-```config
-mkdir -p /var/backups/mysql
-```
 ## 🚀 You're done and ready for disaster! 🚀  
 
 ---
