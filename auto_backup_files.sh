@@ -17,6 +17,7 @@ VERBOSE=true
 #################################################################
 
 mkdir -p ${FILE_BACKUP_PATH}/${TODAY}
+mkdir -p ${FILE_BACKUP_PATH}/log
 echo "Backup started for html files @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
 echo "Backup retention: ${BACKUP_RETAIN_DAYS} days" >> "$LOGFILE"
 

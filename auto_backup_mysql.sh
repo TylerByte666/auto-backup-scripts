@@ -18,6 +18,7 @@ LOGFILE="${DB_BACKUP_PATH}/log/${DATABASE_NAME}".log
 #################################################################
  
 mkdir -p ${DB_BACKUP_PATH}/${TODAY} 
+mkdir -p ${DB_BACKUP_PATH}/log
 echo "Backup started for database - ${DATABASE_NAME} @ $(date +'%d-%m-%Y %H:%M:%S')" >> "$LOGFILE"
 echo "Backup retention: ${BACKUP_RETAIN_DAYS} days" >> "$LOGFILE" 
  
